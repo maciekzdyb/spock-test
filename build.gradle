@@ -1,0 +1,24 @@
+plugins {
+    id 'groovy'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.spockframework/spock-core
+    testImplementation group: 'org.spockframework', name: 'spock-core', version: '2.4-M1-groovy-4.0'
+    // https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all
+    testImplementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.17', ext: 'pom'
+    testImplementation 'net.bytebuddy:byte-buddy:1.14.5'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+}
+
+test {
+    useJUnitPlatform()
+}
